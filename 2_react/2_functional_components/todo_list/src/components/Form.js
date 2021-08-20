@@ -13,20 +13,15 @@ const Form = (props) => {
         setTodoList([...todoList, todoItem]);
         setNewTodo("");
     };
-    const deleteHandler = (delIndex) => {
-        const filteredTodos = todoList.filter((_result, index) => {
-            return index !== delIndex;
-        })
+    const deleteHandler = () => {
+        const filteredTodos = todoList.filter((todo) => todo.complete === false);
         setTodoList(filteredTodos);
     }
-    const completeHandler = (completeIndex) => {
-        const updatedTodos = todoList.map((todo, index) =>{
-            if(completeIndex === index){
-                todo.complete = !todo.complete;
-            }
-        return todo;
-        })
-        setTodoList(updatedTodos) ;
+    const completeHandler = (todo) => {
+        todo.complete = !todo.complete;
+        // let updatedTodos = [...todoList];
+        setTodoList([...todoList]) ;
+
     }
 return(
     <div>
@@ -43,10 +38,10 @@ return(
             todoList.map((newTodo, index) => (
                 <p key={index}>{newTodo.text} 
                 <input  onClick={(e)=> {
-                    completeHandler(index);
-                }} checked={todoList.comlete} type="checkbox" />
+                    completeHandler(newTodo);
+                }} checked={newTodo.complete} type="checkbox" />
                 <button onClick={(e) => {
-                    deleteHandler(index);
+                    deleteHandler();
                 }}
                 >Delete</button>
                 </p> 
