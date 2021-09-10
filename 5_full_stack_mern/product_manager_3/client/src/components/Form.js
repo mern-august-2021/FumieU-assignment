@@ -19,6 +19,7 @@ const submitHandler = (e) => {
         setTitle("");
         setPrice(0);
         setDescription("");})
+        window.location.reload()
         .catch(err => console.log(err)) 
 
 };

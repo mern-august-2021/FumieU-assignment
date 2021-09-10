@@ -13,6 +13,7 @@ const Main = () => {
                 console.log(res.data)
                 setProducts(res.data.products);
                 setLoaded(true);
+
             })
             .catch(err => console.log(err))            
     },[])
