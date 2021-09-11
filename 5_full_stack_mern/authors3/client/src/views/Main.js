@@ -18,7 +18,7 @@ const Main = () =>{
         setAuthors(authors.filter(authors => authors.id !== authorId));
     }
     return (
-        <div　style={{ textAlign:"center"}}>
+        <div className="text-center">
             <h1>Favorite Authors</h1>
             { loaded && <AuthorsList authors={authors} deleteAuthorsFromList = {deleteAuthorsFromList}/> }
             

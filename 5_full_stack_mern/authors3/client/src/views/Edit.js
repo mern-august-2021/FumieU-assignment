@@ -28,16 +28,17 @@ const editAuthor = (e) => {
 }
 
 return(
-    <div>
-        <form onSubmit={editAuthor}>
+    <div className="text-start w-50 mx-auto" >
+        <h2 >Edit this Author</h2>
+        <form className="mb-3 text-start" onSubmit={editAuthor}>
         <p>
-        <label>Name</label><br />
-        <input type="text" 
-        name="name" 
-        value={name} 
-        onChange={(e) => { setName(e.target.value) }} />
-        <input type="submit" />
-        <Link to ="/authors/"><button>Cancel</button></Link>       
+        <label className="form-label">Name:</label>
+        </p>
+        <input className="form-control" type="text" name="name" value={name} onChange={(e) => { setName(e.target.value) }} />
+         <p>
+         <br></br> 
+        <input type="submit" className="btn btn-primary"/>&nbsp;&nbsp; 
+        <Link to ="/authors/"><button className="btn btn-secondary">Cancel</button></Link>       
         </p>
         </form>
     </div>
